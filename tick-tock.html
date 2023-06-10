@@ -36,9 +36,12 @@
     }
 
     .clock {
-      width: 30rem;
-      height: 30rem;
-      border: 20px solid white;
+      background: url("clk2.gif");
+      background-position: center;
+      background-size: cover;
+
+      width: 40rem;
+      height: 40rem;
       border-radius: 50%;
       margin: 50px auto;
       position: relative;
@@ -54,21 +57,55 @@
       position: relative;
       width: 100%;
       height: 100%;
-      transform: translateY(-3px); /* account for the height of the clock hands */
+      transform: translateY(-3px); 
+      /* account for the height of the clock hands */
     }
 
     .hand {
       width: 50%;
-      height: 6px;
       background: black;
       position: absolute;
       top: 50%;
+      transform-origin: right;
+    }
+
+    .hour-hand {
+      height: 7px;
+      transform: rotate(-90deg);
+    }
+
+    .min-hand {
+      height: 5px;
+      transform: rotate(60deg);
+
+    }
+
+    .second-hand {
+      height: 1px;
+      transform: rotate(170deg);
     }
 
   </style>
 
   <script>
+    const hour_hand = document.getElementsByClassName("hour-hand")[0];
+    const min_hand = document.getElementsByClassName("min-hand")[0];
+    const second_hand = document.getElementsByClassName("second-hand")[0];
 
+    setInterval(() => {
+      const now = new Date();
+      const curr_hour = now.getHours();
+      const curr_min = now.getMinutes();
+      const curr_sec = now.getSeconds();
+
+      const second_angle = (90+curr_sec*6)%360;
+      const minute_angle = (90+curr_min*6+curr_sec*0.1)%360;
+      const hour_angle = (90+curr_hour*30+curr_min*0.5+curr_sec*0.00833333)%360;
+      
+      second_hand.style.transform = `rotate(${second_angle}deg)`;
+      min_hand.style.transform = `rotate(${minute_angle}deg)`;
+      hour_hand.style.transform = `rotate(${hour_angle}deg)`;
+    }, 1);
 
   </script>
 </body>
