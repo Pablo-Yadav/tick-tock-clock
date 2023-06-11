@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Tick-Tock Clock</title>
   <link rel="icon" href="https://fav.farm/🔥" />
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -16,103 +17,29 @@
       </div>
     </div>
 
+    <div class="digi-clock">
+      <div class="digi-clk-face">
+        <div class="digi-clk-handle"></div>
+        <div class="time-text-wrapper">
+          <div class="box hour-box"></div>
+          <div class="box colon-box">:</div>
+          <div class="box min-box"></div>
+          <div class="box colon-box">:</div>
+          <div class="box sec-box"></div>
+        </div>
+        <div class="foot foot-left"></div>
+        <div class="foot foot-right"></div>
+      </div>
+      
+    </div>
+
 
   <style>
-    html {
-      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
-      background-size: cover;
-      font-family: 'helvetica neue';
-      text-align: center;
-      font-size: 10px;
-    }
-
-    body {
-      margin: 0;
-      font-size: 2rem;
-      display: flex;
-      flex: 1;
-      min-height: 100vh;
-      align-items: center;
-    }
-
-    .clock {
-      background: url("clk2.gif");
-      background-position: center;
-      background-size: cover;
-
-      width: 40rem;
-      height: 40rem;
-      border-radius: 50%;
-      margin: 50px auto;
-      position: relative;
-      padding: 2rem;
-      box-shadow:
-        0 0 0 4px rgba(0,0,0,0.1),
-        inset 0 0 0 3px #EFEFEF,
-        inset 0 0 10px black,
-        0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .clock-face {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform: translateY(-3px); 
-      /* account for the height of the clock hands */
-    }
-
-    .hand {
-      width: 50%;
-      background: black;
-      position: absolute;
-      top: 50%;
-      transform-origin: right;
-    }
-
-    .hour-hand {
-      height: 7px;
-      transform: rotate(-90deg);
-    }
-
-    .min-hand {
-      height: 5px;
-      transform: rotate(60deg);
-
-    }
-
-    .second-hand {
-      height: 1px;
-      transform: rotate(170deg);
-    }
-
+    /* css code moved to separate stylesheet named as style.css */
   </style>
 
-  <script>
-    // get all hands using their class name
-    const hour_hand = document.getElementsByClassName("hour-hand")[0];
-    const min_hand = document.getElementsByClassName("min-hand")[0];
-    const second_hand = document.getElementsByClassName("second-hand")[0];
-
-    // everything inside setInterval function will be updated each second
-    setInterval(() => {
-      // get the current time as an object
-      const now = new Date();
-      const curr_hour = now.getHours();   // get current hour count
-      const curr_min = now.getMinutes();  // get current minute count
-      const curr_sec = now.getSeconds();  // get current second count
-
-      // angle formulae for each hand
-      // each second spans 6 degree
-      // do 90+ in each hand's angle because their default pos is -90 deg from 00:00:00
-      const second_angle = (90+curr_sec*6)%360;
-      const minute_angle = (90+curr_min*6+curr_sec*0.1)%360;
-      const hour_angle = (90+curr_hour*30+curr_min*0.5+curr_sec*0.00833333)%360;
-      
-      // modify the angle of transform prop value `rotate`
-      second_hand.style.transform = `rotate(${second_angle}deg)`;
-      min_hand.style.transform = `rotate(${minute_angle}deg)`;
-      hour_hand.style.transform = `rotate(${hour_angle}deg)`;
-    }, 1);
+  <script src="../tick-tock.js">
+    
 
   </script>
 </body>
