@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Jura:wght@300&family=Michroma&family=Monomaniac+One&family=Orbitron&family=ZCOOL+QingKe+HuangYou&display=swap');
+html {
+    background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+    background-size: cover;
+    font-family: 'helvetica neue';
+    text-align: center;
+    font-size: 10px;
+  }
+
+  body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .clock {
+    background: url("clk2.gif");
+    background-position: center;
+    background-size: cover;
+
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    /* margin: 50px auto; */
+    position: relative;
+    padding: 2rem;
+    box-shadow:
+      0 0 0 4px rgba(0,0,0,0.1),
+      inset 0 0 0 3px #EFEFEF,
+      inset 0 0 10px black,
+      0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
+  }
+
+  .hand {
+    width: 50%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform-origin: right;
+  }
+
+  .hour-hand {
+    height: 7px;
+    transform: rotate(-90deg);
+  }
+
+  .min-hand {
+    height: 5px;
+    transform: rotate(60deg);
+
+  }
+
+  .second-hand {
+    height: 1px;
+    transform: rotate(170deg);
+  }
+
+  /* digital clock styling */
+
+  .digi-clock {
+    width: 50rem;
+    height: 30rem;
+    /* background-color: cyan; */
+    border: 3px solid #000;
+    border-radius: 1em;
+    box-shadow: 0.1px 0.3px 5px rgba(255, 255, 255, 0.709);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* font-family: 'Bodoni Moda', serif; */
+    font-family: 'Michroma', sans-serif;
+    /* font-family: 'Monomaniac One', sans-serif; */
+    /* font-family: 'Orbitron', sans-serif; */
+    /* font-family: 'ZCOOL QingKe HuangYou', sans-serif; */
+    /* font-family: 'Jura', sans-serif; */
+  }
+
+  .digi-clk-handle {
+    width: 15rem;
+    height: 2rem;
+    border: 3px solid;
+    border-radius: 1rem 1rem 0 0;
+    box-sizing: border-box;
+
+    position: absolute;
+    top: -2rem;
+    left: 15rem;
+  }
+
+  .digi-clk-face {
+    width: 90%;
+    height: 80%;
+    border: 3px solid;
+    border-radius: 1em;
+    box-sizing: border-box;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .foot {
+    width: 5rem;
+    height: 2rem;
+    border: 3px solid;
+    border-radius: 0.5rem 0.5rem 1rem 1rem;
+
+    position: absolute; 
+    bottom: -2rem;   
+    box-sizing: border-box;
+
+  }
+
+  .foot-left {
+    left: 5rem;
+  }
+
+  .foot-right {
+    right: 5rem;
+  }
+
+  .time-text-wrapper {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    gap: 1rem;
+  }
+
+  .box {
+    width: fit-content;
+    height: 100%;
+    font-size: 6rem;
+
+    display: flex;
+    align-items: center;
+  }
+
+
+
+ 
