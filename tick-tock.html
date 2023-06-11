@@ -55,7 +55,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      transform: translateX(0px); /* account for the height of the clock hands */
+      /*transform: translateX(0px); account for the height of the clock hands */
     }
 
     .hand {
@@ -63,34 +63,54 @@
       height: 6px;
       background: black;
       position: absolute;
-      top: 50%;
+      transform-origin: bottom center;
     }
     .hour-hand{
-      width:-40%;
-      transform-origin: bottom right;
-      transform: rotate(90deg);
+      width:6px;
+      
+      height:60px;
+      left:50%;
+      bottom:50%;
+      margin:auto;
+      
     }
     .min-hand{
-transform-origin: bottom right;
-transform: rotate(60deg);
+      width:4px;
+      height:100px;
+      left:50%;
+      bottom:50%;
+      margin:auto;
     }
     .second-hand{
-      transform-origin: bottom right;
-transform: rotate(30deg);
+      
+      width:2px;
+      height:100px;
+      left:50%;
+      bottom:50%;
+      margin:auto;
     }
 
   </style>
 
   <script>
    function  updateTime(){
-    const date=new Date();
-    const hour=date.getHours();
-    const minutes=date.getMinutes();
-    const seconds=date.getSeconds();
-    
+  var date=new Date();
+    var hour=date.getHours();
+    var minute=date.getMinutes();
+    var seconds=date.getSeconds();
+    var secondHand=document.querySelector(".second-hand");
+    var hourHand=document.querySelector(".hour-hand");
+    var minHand=document.querySelector(".min-hand");
+    var hourRotation=hour*30+minute/2;
+    var minRotation=minute*6 +seconds/10;
+    var secondsRotation=seconds*6;
+    hourHand.style.transform=`rotate(${hourRotation}deg)`;
+    minHand.style.transform=`rotate(${minRotation}deg)`;
+    secondHand.style.transform=`rotate(${secondsRotation}deg)`;
+
  
    }
-   setInterval(udateTime,1000);
+   setInterval(updateTime,1000);
 
   </script>
 </body>
