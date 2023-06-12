@@ -38,10 +38,35 @@ html {
   }
 
   .hand {
-    width: 50%;
-    height: 6px;
-    background: black;
+    width:50%;
+    height:6px;
+    background:black;
     position: absolute;
-    transform-origin: right center;
-    top: 50%;
+    
+    transform-origin:bottom center;
+  }
+  .hour-hand{
+    width: 10px;
+    height: 80px;
+    left: 50%;
+    background: red;
+    bottom:50%;
+    margin:auto;
+    
+  }
+  .min-hand{
+    width: 6px;
+    height: 110px;
+    left: 50%;
+    background: blue;
+    bottom:50%;
+    margin:auto;
+  }
+  .second-hand{
+    width: 6px;
+    height: 150px;
+    left: 50%;
+    background: yellow;
+    bottom:50%;
+    margin:auto;
   }
