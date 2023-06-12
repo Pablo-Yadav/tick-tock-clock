@@ -9,7 +9,7 @@ function updateClock() {
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
-    const hourRotation = (hours * 30) + (minutes * 0.5); 
+    const hourRotation = (hours * 30) + (minutes * 0.5) ; 
     const minuteRotation = (minutes * 6) + (seconds * 0.1); 
     const secondRotation = seconds * 6; 
 
